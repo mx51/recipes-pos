@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SPI Micro POS</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="spi-client-js.js"></script>
+    <script type="text/javascript" src="script.js" defer></script>
+    <script src="spi.js"></script>
+  </head>
+  <body>
+    <nav id="icon" class="navbar">
+      <div class="logo">
+        <img
+          id="mx51Logo"
+          src="https://ik.imagekit.io/damengrandom/temps/MX51-LOGO_y0IzhJaMp22.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1645937464238"
+          alt="logo"
+        />
+      </div>
+      <div class="menu__icon">
+        <div class="menu__icon--line menu__icon--line-top"></div>
+        <div class="menu__icon--line"></div>
+        <div class="menu__icon--line menu__icon--line-bottom"></div>
+      </div>
+    </nav>
+
+    <div id="navbar" class="overlay">
+      <div class="overlay__menu clipper__background">
+        <button
+          id="pair"
+          class="overlay__menu--item border-effect"
+          onclick="pair()"
+        >
+          Pair
+        </button>
+        <button
+          class="btn overlay__menu--item border-effect"
+          onclick="unpair()"
+        >
+          Unpair
+        </button>
+        <button
+          class="btn overlay__menu--item border-effect"
+          onclick="purchase()"
+        >
+          Purchase
+        </button>
+        <button
+          class="btn overlay__menu--item border-effect"
+          onclick="refund()"
+        >
+          Refund
+        </button>
+        <button
+          class="btn overlay__menu--item border-effect"
+          onclick="cashout()"
+        >
+          Cashout
+        </button>
+      </div>
+    </div>
+
+    <div class="site__content">
+      <h2 class="site__content-headline">
+        Welcome to MX51 Micro POS integration demo (For Receipts 📖)
+      </h2>
+      <ol>
+        <li>
+          To demonstrate as the example of <strong>Recipes</strong> [Could be
+          deployed & as part of Recipes]
+        </li>
+        <li>
+          To provide a <strong>first trial</strong> of SPI library to developers
+          [Internal + External POS developers]
+        </li>
+        <li>
+          To prove how easily integrate SPI library [<strong>6</strong>
+          files Only with Vanilla JavaScript]
+        </li>
+        <li>
+          To be another <strong>testing tool</strong> during client POS is
+          down❓ [eg: Terminal pair testing]
+        </li>
+        <li>Thank you and QA 🤠🤠</li>
+      </ol>
+
+      <div id="snackbar"></div>
+    </div>
+  </body>
+</html>
