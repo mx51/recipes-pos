@@ -1,6 +1,6 @@
 # Hello, Mini POS
 
-Purpose: to approach how to integrate with SPI library ~~
+Purpose: To demonstrate how to use the spi.js library using vanilla Javascript
 
 ### How to run the Mini POS
 
