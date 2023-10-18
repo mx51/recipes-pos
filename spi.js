@@ -1,18 +1,16 @@
+// define the terminal related parameters before pair a terminal
 var spiInstance;
-const SpiVersion = "2.9.9" // Current SPI library version
-
-// Define your terminal and POS related parameters before pairing a terminal
-const posId = "Jpos"; // eg: TESTWBC
-const serialNumber = "500-000-007"; // eg: 123-123-123
-const eftposAddress = ""; // eg: 192.168.0.14 (not required if using Auto Address Resolution)
-const posVersion = "7.1.3"; // eg: 7.9.2
-const posName = "MiniPOS"; // eg: mx51
+const posId = ""; // eg: TESTWBC
+const serialNumber = ""; // eg: 123-123-123
+const eftposAddress = ""; // eg: 192.168.0.14
+const version = ""; // eg: 2.9.2
+const posName = ""; // eg: mx51
 
 // Save secrets into local storage
 var spiSecrets = JSON.parse(window.localStorage.getItem("secrets"));
 
 // Instantiate the SPI library as an instance object
-spiInstance = new window.mx51.Spi(posId, serialNumber, eftposAddress, spiSecrets);
+spiInstance = new window.Spi(posId, serialNumber, eftposAddress, spiSecrets);
 
 /**
  * Sets values used to identify the POS software to the EFTPOS terminal.
@@ -21,51 +19,44 @@ spiInstance = new window.mx51.Spi(posId, serialNumber, eftposAddress, spiSecrets
  * @param posVendorId Vendor identifier of the POS itself.
  * @param posVersion  Version string of the POS itself.
  **/
-spiInstance.SetPosInfo(posName, posVersion); // If not set, will get this error: Uncaught Error: Missing POS vendor ID and version. posVendorId and posVersion are required before starting
+spiInstance.SetPosInfo(posName, version); // If not set, will get this error: Uncaught Error: Missing POS vendor ID and version. posVendorId and posVersion are required before starting
 
 /**
  * Set the tenant code of your provider, please use the GetAvailableTenants method for a list of available tenants.
- * More information can be found here - https://developer.mx51.io/v2-spi/docs/setup#tenants
  *
  * @param tenantCode
  **/
-spiInstance.SetTenantCode("gko");
+spiInstance.SetTenantCode("wbc");
 
 /**
  * Set the api key used for auto address discovery feature
- * Integration Support will provide you with a Unique API key
  *
  * @param deviceApiKey
  **/
-spiInstance.SetDeviceApiKey("UniqueAPIKeyProvidedByIntegrationTeam");
+spiInstance.SetDeviceApiKey("DefineYourOwnAPIKey");
 
 /**
  * Allows you to set the auto address discovery feature.
  *
  * @param autoAddressResolutionEnable
  **/
-spiInstance.SetAutoAddressResolution(true);
+// spiInstance.SetAutoAddressResolution(true);
 
 /**
  * Set the client library to use secure web sockets TLS (wss protocol)
  *
  * @param useSecureWebSockets
  **/
-spiInstance.SetSecureWebSockets(
-  window.location.protocol === "https:"
-    ? true
-    : false
-);
+// spiInstance.SetAutoAddressResolution(true);
 
 /**
  * Call this method to set the client library test mode.
- * Set it to true only while you are developing the integration with a physical test terminal. 
- * If you are using Gecko Bank then it should be set to false.
+ * Set it to true only while you are developing the integration.
  * It defaults to false. For a real merchant, always leave it set to false.
  *
  * @param testMode
  **/
-spiInstance.SetTestMode(false);
+spiInstance.SetTestMode(true);
 
 // A function which is for shown some logs
 function infoLogger(eventName, data) {
