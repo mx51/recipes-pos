@@ -33,4 +33,3 @@ const posName = "Pos Name"; // eg: mx51
 ### 6. Initiate pairing from the terminal
 
 ### 7. Initiate pairing from the Mini POS
-```
