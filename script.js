@@ -16,8 +16,7 @@ function animateMenu() {
 
       if (navbarDOM.style.height === "100%") {
         navbarDOM.style.height = "0";
-        mx51LogoDOM.src =
-          "https://ik.imagekit.io/damengrandom/temps/MX51-LOGO_y0IzhJaMp22.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1645937464238";
+        mx51LogoDOM.src = "./mx51-logo-white.png";
       } else {
         navbarDOM.style.height = "100%";
         mx51LogoDOM.src = "./mx51-logo.png";

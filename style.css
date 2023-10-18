@@ -5,8 +5,8 @@
   --hamburger-icon-size: 1.875rem;
   --primary-light-color: #fff;
   --primary-dark-color: #000;
-  --primary-theme-color: darkgreen;
-  --secondary-theme-color: orange;
+  --primary-theme-color: #7029ff;
+  --secondary-theme-color: #79fbcb;
 }
 
 ::selection {
@@ -218,7 +218,7 @@ body.nav-active .overlay__menu--item:nth-child(5) {
 }
 
 .site__content ol li strong {
-  color: #db2938;
+  color: #9b69ff;
   font-size: 1.2rem;
 }
 
