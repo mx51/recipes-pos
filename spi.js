@@ -1,12 +1,11 @@
 var spiInstance;
-const SpiVersion = "2.9.9" // Current SPI library version
 
 // Define your terminal and POS related parameters before pairing a terminal
-const posId = "Jpos"; // eg: TESTWBC
-const serialNumber = "500-000-007"; // eg: 123-123-123
+const posId = ""; // eg: TESTWBC
+const serialNumber = ""; // eg: 123-123-123
 const eftposAddress = ""; // eg: 192.168.0.14 (not required if using Auto Address Resolution)
-const posVersion = "7.1.3"; // eg: 7.9.2
-const posName = "MiniPOS"; // eg: mx51
+const posVersion = ""; // eg: 7.9.2
+const posName = ""; // eg: MiniPOS
 
 // Save secrets into local storage
 var spiSecrets = JSON.parse(window.localStorage.getItem("secrets"));
