@@ -3,7 +3,7 @@ var spiInstance;
 // Define your terminal and POS related parameters before pairing a terminal
 const posId = ""; // eg: TESTWBC
 const serialNumber = ""; // eg: 123-123-123
-const eftposAddress = ""; // eg: 192.168.0.14 (not required if using Auto Address Resolution)
+const eftposAddress = ""; // eg: 192.168.0.14
 const posVersion = ""; // eg: 7.9.2
 const posName = ""; // eg: MiniPOS
 
@@ -166,6 +166,14 @@ document.addEventListener("TxFlowStateChanged", (e) => {
     );
   }
 });
+
+/**
+ * Event: DeviceAddressChanged
+ * To get latest updates for device address resolution
+ **/
+document.addEventListener("DeviceAddressChanged", (e) => {
+  infoLogger("DeviceAddressChanged", e)
+})
 
 /**
  * Event: BatteryLevelChanged
